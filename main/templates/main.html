@@ -1,20 +1,103 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>그리드 띄워줄 페이지</h1>
-    {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}">로그아웃</a>
-    <br>
-    <p>{{user.username}}님, 반갑습니다.</p>
-    {% else %}
-    <a href="{% url 'login' %}">로그인하기</a>
-    <br>
-    <a href="{% url 'signup' %}">회원가입하기</a>
-    {% endif %}
+    <div id="navbar">
+        <div id="topnav">
+            <a href="#">
+                <img id="logo" src="{% static 'images/sfslogo.png' %}" width="63px">
+            </a>
+        <div class="menu">
+            {% if user.is_authenticated %}
+            <ul>
+            <li><a href="{% url 'logout' %}">logout</a></li>
+            <li><img src=""><a href="#">mypage</a></li>
+            </ul>
+            {% endif %}
+        </div> 
+            <div class="menu">
+                {% if user.is_anonymous %}
+                <ul>
+                <li><a href="{% url 'login' %}">login</a></li>
+                <li><a href="{% url 'signup' %}">signup</a></li>
+                <li><a href="#">mypage</a></li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div class="searchbar-div">
+            <input id="searchbar" type="text" placeholder="Search…">
+        </div>
+      </div>
+
+    <div class="main">
+        <div class="line cat1">
+            <h1 class="cat-name">#카테고리</h1>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="https://studiomeal.com/wp-content/uploads/2020/02/grid-og.jpg" alt="">
+            </div>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="http://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9" alt="">
+            </div>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+        </div>
+        <div class="line cat1">
+            <h1 class="cat-name">#카테고리</h1>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+        </div>
+        <div class="line cat1">
+            <h1 class="cat-name">#카테고리</h1>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+        </div>
+        <div class="line cat1">
+            <h1 class="cat-name">#카테고리</h1>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+            <div class="cell">
+                <h3>이 사이트는 이런 사이트입니다.</h3>
+                <img src="{% static 'images/web.jpg' %}" alt="">
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

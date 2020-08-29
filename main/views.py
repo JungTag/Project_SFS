@@ -34,7 +34,9 @@ def signup(request):
                 except User.DoesNotExist:
                     user = User.objects.create_user(
                         username = request.POST['username'],
-                        password = request.POST['password1']
+                        password = request.POST['password1'],
+                        first_name = request.POST['first_name'],
+                        last_name = request.POST['last_name']
                     )
                     return render(request, 'login.html')
             else:
