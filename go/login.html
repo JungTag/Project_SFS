@@ -1,30 +1,32 @@
+{% load static %}
 <html>
     <head>
         <title>login</title>
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="{% static 'css/user-style.css' %}">
     </head>
     <body>
         <a href="#" id="gologin">로그인하러가기</a>
         <div class="wrap">
             <div class="form-wrap">
-                <img id="sfslogo" src="images/sfslogo.png" width="250px">
+                <img id="sfslogo" src="{% static 'images/sfslogo.png' %}" width="250px">
                 <div id="intro" class="input-group">
 
                 </div>
-                <form id="login" action="" class="input-group">
-                    <input type="text" class="input-field" placeholder="이메일을 입력하세요" required>
-                    <input type="password" class="input-field" placeholder="비밀번호를 입력하세요" required>
+                <form id="login" action="{% url 'login' %}" method="POST" class="input-group">
+                    {% csrf_token %}
+                    <input type="text" name= "username" class="input-field" placeholder="아이디를 입력하세요" required>
+                    <input type="password" name = "password" class="input-field" placeholder="비밀번호를 입력하세요" required>
                     <label for="save"><input type="checkbox" id="savepass">비밀번호 저장하기</label>
                     <div class="social-icons">
-                        <a href="#"><img src="images/fb.jpg" alt="facebook" width="30px"></a>
-                        <a href="#"><img id="insta" src="images/insta.png" alt="twitter" width="40px"></a>
-                        <a href="#"><img id="gmail" src="images/gmail.png" alt="google" width="30px"></a>
+                        <a href="#"><img src="{% static 'images/fb.jpg' %}" alt="facebook" width="30px"></a>
+                        <a href="#"><img id="insta" src="{% static 'images/insta.png' %}" alt="twitter" width="40px"></a>
+                        <a href="#"><img id="gmail" src="{% static 'images/gmail.png' %}" alt="google" width="30px"></a>
                     </div>                    
                     <button class="submit">로그인하기</button>
-                    <a href="#" class="close"><img src="images/close.png" width="40px"></a>
+                    <a href="#" class="close"><img src="{% static 'images/close.png' %}" width="40px"></a>
                 </form>
                 <div id="signup">
-                    <a href="#" id="sign">계정이 없으시다면? 지금 가입하기</a>
+                    <a href="{% url 'signup' %}" id="sign">계정이 없으시다면? 지금 가입하기</a>
                 </div>
             </div>
         </div>
@@ -32,7 +34,7 @@
 
         <div class="siwrap">
             <div class="form-wrap">
-                <img id="sfslogo" src="images/sfslogo.png" width="250px">
+                <img id="sfslogo" src="{%static 'images/sfslogo.png' %}" width="250px">
                 <div id="intro" class="input-group">
                 </div>
                 <form id="login" action="" class="input-group">
@@ -40,12 +42,12 @@
                     <input type="password" class="input-field" placeholder="비밀번호를 입력하세요" required>
                     <input type="password" class="input-field" placeholder="비밀번호를 다시 입력하세요" required>
                     <div class="social-icons">
-                        <a href="#"><img src="images/fb.jpg" alt="facebook" width="30px"></a>
-                        <a href="#"><img src="images/insta.png" alt="twitter" width="40px"></a>
-                        <a href="#"><img id="gmail" src="images/gmail.png" alt="google" width="30px"></a>
+                        <a href="#"><img src="{% static 'images/fb.jpg' %}" alt="facebook" width="30px"></a>
+                        <a href="#"><img src="{% static 'images/insta.png' %}" alt="twitter" width="40px"></a>
+                        <a href="#"><img id="gmail" src="{% static 'images/gmail.png' %}" alt="google" width="30px"></a>
                     </div>                    
                     <button class="submit">회원가입하기</button>
-                    <a href="#" class="close"><img src="images/close.png" width="40px"></a>
+                    <a href="#" class="close"><img src="{% static 'images/close.png' %}" width="40px"></a>
                 </form>
             </div>
         </div>
