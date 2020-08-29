@@ -1,0 +1,124 @@
+body {
+    -ms-overflow-style: none; 
+    margin: 0;
+} 
+
+/* 스크롤바 가리기 */
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.main {
+    position: absolute;
+    /* padding-top: 200px; */
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: left;
+    width: 90%;
+}
+
+.line {
+    display: grid;
+    /* border: 5px solid plum; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.2fr 1.8fr;
+    width: 100%;
+    grid-gap: 10px;
+    margin-bottom: 80px;
+}
+
+.cell {
+    text-align: center;
+    border: 0.5px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0px 5px;
+}
+
+.cat-name {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin: 0;
+    height: 100%;
+}
+
+.cell img {
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+}
+
+/* navbar */
+#topnav {
+    padding: 0 20px;
+    height: 100px;
+    line-height: 100px;
+    background-size: cover;
+    background-image: url("https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/5xq2/image/0lp8RLaJ2IgctTWVl2nEa-JRCSc.jpg");
+}
+
+#topnav #logo{
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    /* width: 100% */
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#navbar #search {
+    width: 100%;
+}
+
+.searchbar-div {
+    padding: 20px 0px 20px;
+    background-color: white;
+    z-index: 1;
+}
+
+  #navbar #searchbar {
+      /* all: unset; */
+      outline: none;
+      border-radius: 30px;
+      width: 600px;
+      height: 30px;
+      display : block;
+      margin : 0 auto;
+      /* margin-top: 40px; */
+      border: 2px solid lightgray;
+      padding-left: 20px;
+      font-size: 15px;
+  }
+
+  #navbar .menu {
+    float: right;
+    display: inline;
+    clear: left;
+    margin: 0px;
+    
+  }
+  
+  .menu li {
+    list-style: none;
+    padding: 0 20px;
+    float: left;
+    font-size: 16px;
+    display: inline;
+    margin-top: -15px;
+    vertical-align: middle;
+  }
+
+  .menu li a {
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+  }
+/* navbar */
