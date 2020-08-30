@@ -1,30 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>회원가입 하기!</h1>
-    <form action="{% url 'signup' %}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="가입할 아이디를 입력하세요">
-        <br>
-        <input type="text" name="first_name" placeholder="이름">
-        <br>
-        <input type="text" name="last_name" placeholder="성">
-        <br>
-        <input type="password" name="password1" placeholder="비밀번호를 입력하세요">
-        <br>
-        <input type="password" name="password2" placeholder="비밀번호를 다시 입력하세요">
-        <br>
-        <input type='submit' value="회원가입 하기!">
-        <br>
-    </form>
-    
-{% if error %}
-    {{error}}
-{% endif %}
-</body>
-</html>
+{% load static %}
+<html>
+    <head>
+        <title>sign up</title>
+        <link rel="stylesheet" href="{% static 'css/user-style.css' %}">
+    </head>
+    <body>
+        <a href="#" id="gosignup">회원가입하러가기</a>
+        <div class="wrap">
+            <div class="form-wrap">
+                <img id="sfslogo" src="{% static 'images/sfslogo.png' %}" width="200px">
+                <div id="intro" class="input-group">
+                </div>
+                <form id="login" action="" class="input-group">
+                    {% csrf_token %}
+                    <input type="text" name='username' class="input-field" placeholder="아이디를 입력하세요" required>
+                    <input type="text" name='first_name' class="input-field" placeholder="성을 입력하세요" required>
+                    <input type="text" name='last_name' class="input-field" placeholder="이름을 입력하세요" required>
+                    <input type="password" name='password1' class="input-field" placeholder="비밀번호를 입력하세요" required>
+                    <input type="password" name='password2' class="input-field" placeholder="비밀번호를 다시 입력하세요" required>
+                    <div class="social-icons">
+                        <a href="#"><img src="{% static 'images/fb.jpg' %}" alt="facebook" width="30px"></a>
+                        <a href="#"><img src="{% static 'images/insta.png' %}" alt="twitter" width="40px"></a>
+                        <a href="#"><img id="gmail" src="{% static 'images/gmail.png' %}" alt="google" width="30px"></a>
+                    </div>                    
+                    <button class="submit">회원가입하기</button>
+                    <a href="#" class="close"><img src="{% static 'images/close.png' %}" width="40px"></a>
+                </form>
+            </div>
+        </div>
+        <div class="dim"></div>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+               $("#gosignup").on("click", function(){
+                   $(".wrap").show();
+                   $(".dim").show();
+               });
+
+               $(".wrap .close").on("click", function() {
+                   $(".wrap").hide();
+                   $(".dim").hide();
+               });
+            });
+        </script>
+    </body>
+</html> 
