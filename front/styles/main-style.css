@@ -1,0 +1,221 @@
+body {
+    -ms-overflow-style: none; 
+    margin: 0;
+} 
+
+/* 스크롤바 가리기 */
+::-webkit-scrollbar { 
+    display: none; 
+}    
+
+/* navbar */
+#topnav {
+    padding: 0 20px;
+    height: 100px;
+    line-height: 100px;
+    background-size: cover;
+    background-image: url("https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/5xq2/image/0lp8RLaJ2IgctTWVl2nEa-JRCSc.jpg");
+}
+
+#topnav #logo{
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    /* width: 100% */
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+#navbar #search {
+    width: 100%;
+}
+
+.searchbar-div {
+    padding: 20px 0px 20px;
+    background-color: white;
+    z-index: 100;
+}
+
+  #navbar #searchbar {
+      /* all: unset; */
+      outline: none;
+      border-radius: 30px;
+      width: 600px;
+      height: 30px;
+      display : block;
+      margin : 0 auto;
+      /* margin-top: 40px; */
+      border: 2px solid lightgray;
+      padding-left: 20px;
+      font-size: 15px;
+  }
+
+  #navbar .menu {
+    float: right;
+    display: inline;
+    clear: left;
+    margin: 0px;
+    
+  }
+  
+  .menu li {
+    list-style: none;
+    padding: 0 20px;
+    float: left;
+    font-size: 16px;
+    display: inline;
+    margin-top: -15px;
+    vertical-align: middle;
+  }
+
+  .menu li a {
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+  }
+/* navbar */
+
+/*main*/
+.main {
+    transform: translateY(15%);
+}
+/*main*/
+.container {
+    margin: 50px 30px;
+}
+
+.container .tag_name {
+    margin: 0px 45px 0px;
+    font-size: 40px;
+}
+
+.for_slick_slider {
+    display: flex;
+    position: relative;
+}
+
+.for_slick_slider button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: none;
+    background: rgba(0,0,0,.5);
+    outline: none;
+}
+
+.for_slick_slider button:active {
+    box-shadow:inset 1px 1px 4px -1px rgb(0, 0, 0);
+}
+
+.for_slick_slider .slick-prev {
+    left: -10px;
+    font-size: 0;
+    color:transparent;
+}
+
+.for_slick_slider .slick-prev::before {
+    content: "\e93b";
+    font-family: "xeicon";
+    font-size: 20px;
+    padding-right: 2px;
+    color: white;
+}
+
+.for_slick_slider .slick-next {
+    right: -10px;
+    font-size: 0;
+    color:transparent;
+}
+
+.for_slick_slider .slick-next::before {
+    content: "\e93e";
+    font-family: "xeicon";
+    font-size: 20px;
+    padding-left: 2px;
+    color: white;
+}
+
+.for_slick_slider .items {
+    width: 20%;
+    height: 15%;
+    margin: 30px 50px 50px;
+    position: relative;
+    outline: 0;
+}
+
+.for_slick_slider .items .title {
+    margin-bottom: 10px;
+}
+
+.for_slick_slider .wrapper {
+    position: relative;
+}
+
+.for_slick_slider img {
+    width: 100%;
+    max-height: 120px;
+    border-radius: 8px;
+    transition: all ease-in-out .4s;
+    transition-delay: 0.2s;
+    display: inline-block;
+}
+
+.for_slick_slider .items .top {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 100;
+}
+
+.for_slick_slider .items .top a {
+    outline: none;
+}
+
+.for_slick_slider .items .top .save {
+    width: 40px;
+    height: 40px;
+}
+
+.for_slick_slider .items .bottom {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.for_slick_slider .items .bottom a {
+    outline: none;
+}
+
+.for_slick_slider .items .bottom .link {
+    width: 32px;
+    height: 32px;
+}
+
+.for_slick_slider .slick-center {
+    transform: scale(1.4);
+    transition-delay: 0;
+}
+
+.for_slick_slider .slick-center .wrapper .preview {
+    filter: brightness(50%);
+}
+
+/* for centered event */
+.for_slick_slider .slick-slide .toggle {
+    display: none;
+}
+
+.for_slick_slider .slick-center .toggle {
+    display: inline-block;
+}
+/* for centered event */
