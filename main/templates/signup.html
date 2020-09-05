@@ -11,13 +11,17 @@
                 <img id="sfslogo" src="{% static 'images/sfslogo.png' %}" width="200px">
                 <div id="intro" class="input-group">
                 </div>
-                <form id="login" action="" class="input-group">
+                <form id="login" action="{% url 'signup' %}" method='POST' class="input-group">
                     {% csrf_token %}
                     <input type="text" name='username' class="input-field" placeholder="아이디를 입력하세요" required>
+                    <input type="email" name='email_address' class="input-field" placeholder="이메일을 입력하세요" required>
                     <input type="text" name='first_name' class="input-field" placeholder="성을 입력하세요" required>
                     <input type="text" name='last_name' class="input-field" placeholder="이름을 입력하세요" required>
                     <input type="password" name='password1' class="input-field" placeholder="비밀번호를 입력하세요" required>
                     <input type="password" name='password2' class="input-field" placeholder="비밀번호를 다시 입력하세요" required>
+                    <input type='text', name='job', class='input-field' placeholder='직업을 입력하세요'>
+                    <input type='text', name='date_of_birth', class='input-field' placeholder='생년월일을 입력하세요'>
+                    
                     <div class="social-icons">
                         <a href="#"><img src="{% static 'images/fb.jpg' %}" alt="facebook" width="30px"></a>
                         <a href="#"><img src="{% static 'images/insta.png' %}" alt="twitter" width="40px"></a>
