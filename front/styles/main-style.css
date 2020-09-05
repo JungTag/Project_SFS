@@ -155,6 +155,8 @@ body {
 
 .for_slick_slider .items .title {
     margin-bottom: 10px;
+    max-height: 50px;
+    overflow: hidden;
 }
 
 .for_slick_slider .wrapper {
