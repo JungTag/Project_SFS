@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import *
+import csv
+from random import randint
+
 
 #이메일 인증 관련 (SMTP)
 from django.contrib.sites.shortcuts import get_current_site
@@ -95,3 +98,18 @@ def activate(request, uidb64, token):
         return redirect('main')
     else:
         return render(request, 'main.html', {'error' : '계정 활성화 오류'})
+
+
+def db(request):
+    CSV_PATH = './sitedata.csv'
+    with open(CSV_PATH, newline='', encoding='euc-kr') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            site = Site()
+            site.description = row['description']
+            site.title = row['title']
+            site.tag = row['tag']
+            site.url = row['url']
+            site.save()
+
+        return redirect('main')
