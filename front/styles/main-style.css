@@ -219,3 +219,152 @@ body {
     display: inline-block;
 }
 /* for centered event */
+
+
+/* login & signup */
+.wrap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: none;
+    z-index: 101;
+}
+
+#signlogo {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+}
+
+.intro {
+    text-align: center;
+}
+.intro h1 {
+    color: white;
+    position: absolute;
+    top: 130px;
+    left: 80px;
+}
+
+.siwrap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: none;
+    z-index: 100;
+}
+
+.form-wrap {
+    width: 380px;
+    height: 530px;
+    position: relative;
+    margin: 6% auto;
+    background-color: #424242;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+
+.social-icons {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+
+.social-icons img {
+    line-height: 100px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+input::placeholder {
+    color: white;
+}
+.submit {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background-color: white;
+    outline: none;
+    border-radius: 10px;
+}
+
+#login {
+    left: 50px;
+}
+#register {
+    left: 450px;
+} 
+
+#sfslogo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+#savepass {
+    margin-top: 20px;
+    font-size: large;
+    color: red;
+}
+
+#signup #sign {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    bottom: 40px;
+    left: 130px;
+}
+
+.dim { 
+    display:none; left: 0; position: absolute;
+    top: 0; z-index: 100; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.4);
+}
+
+.wrap .close { 
+    position: absolute;
+    right:-40px; 
+    top: -160px;
+}
+
+.siwrap .close {
+    position: absolute;
+    right:-40px; 
+    top: -160px;
+}
+
+.wrap .closelogin {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#savepass p{
+    color: white;
+}
+
+.siwrap {
+    display: none;
+}
+
