@@ -20,10 +20,11 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('login', views.login, name='login'),
-    path('signup', views.signup, name='signup'),
-    path('main', views.main, name='main'),
-    path('logout', views.logout, name='logout'),
+    path('login/', views.login, name='login'),
+    path('signup/', views.signup, name='signup'),
+    path('main/', views.main, name='main'),
+    path('logout/', views.logout, name='logout'),
     path('activate/<str:uidb64>/<str:token>/', views.activate, name="activate"),
-    path('db', views.db, name='db')
+    path('db', views.db, name='db'),
+    path('result/', views.result, name='result'),
 ]

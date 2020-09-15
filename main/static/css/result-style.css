@@ -82,12 +82,13 @@ body {
     margin: 0 60px;
     transform: translateY(20%);
 }
-/* rseult */
+/* result */
 
 /* grid cell */
 .result .item {
     width: 21%;
-    margin: 1em 2%
+    margin: 1em 2%;
+    position: relative;
 }
 
 .result .item img {
@@ -107,3 +108,47 @@ body {
     }
 }
 /* grid cell */
+
+/* in grid cell(like and link) */
+.result .item .top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.result .item .top a {
+    outline: none;
+}
+
+.result .item .top .save {
+    width: 40px;
+    height: 40px;
+}
+
+.result .item .bottom {
+    position: absolute;
+    bottom: 29px;
+    right: 0px;
+    z-index: 10;
+}
+
+.result .item .bottom a {
+    outline: none;
+}
+
+.result .item .bottom .link {
+    width: 32px;
+    height: 32px;
+}
+/* in grid cell(like and link) */
+
+/* for event(mouseover and mouserout) */
+.dark {
+    filter: brightness(50%);
+}
+
+.hidden {
+    display: none;
+}
+/* for event(mouseover and mouserout) */

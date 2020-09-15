@@ -78,7 +78,19 @@ def signup(request):
 
 # 메인페이지 (추천 사이트 출력)
 def main(request):
+    if request.method == "POST":
+        keyword = request.POST["searchbar"]
+        result = []
+        for site in Site.objects.filter(title__contains=keyword):
+            result.append(site)
+        for site in Site.objects.filter(description__contains=keyword):
+            result.append(site)
+        result = list(set(result))
+        return render(request, 'result.html', {'result' : result, 'keyword' : keyword})
     return render(request, 'main.html')
+
+def result(request):
+    return render(request, 'result.html')
 
 # 로그아웃 구현
 def logout(request):

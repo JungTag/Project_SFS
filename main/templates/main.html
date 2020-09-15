@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SFS</title>
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="{% static 'css/main-style.css' %}">
@@ -12,7 +12,7 @@
 <body>
     <div id="navbar">
         <div id="topnav">
-            <a href="{% url 'index' %}">
+            <a href="{% url 'main' %}">
                 <img id="logo" src="{% static 'images/siteforsites.png' %}" width="100px">
             </a>
             <div class="menu">
@@ -33,11 +33,13 @@
                 {% endif %}
             </div>
         </div>
-        <div class="searchbar-div">
-            <input id="searchbar" type="text" placeholder="Search…">
-        </div>
+        <form class="searchbar-div" method="POST" action="{% url 'main' %}">
+            {% csrf_token %}
+            <input name="searchbar" id="searchbar" type="text" placeholder="Search…">
+        </form>
     </div>
-    <div class="wrap">
+        
+    <!-- <div class="wrap">
         <div class="form-wrap">
             <img id="sfslogo" src="{% static 'images/loginlogo.png' %}" width="150px">
             <div class="intro">
@@ -83,7 +85,8 @@
                 <a href="#" class="close"><img src="{% static 'images/close.png' %}" width="40px"></a>
             </form>
         </div>
-    </div>
+    </div> -->
+    
     <div class="main">
         <div class="container">
             <h1 class="tag_name">#교육</h1>

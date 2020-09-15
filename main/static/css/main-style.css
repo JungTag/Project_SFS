@@ -4,9 +4,9 @@ body {
 } 
 
 /* 스크롤바 가리기 */
-::-webkit-scrollbar { 
+/* ::-webkit-scrollbar { 
     display: none; 
-}    
+}     */
 
 /* navbar */
 #topnav {
