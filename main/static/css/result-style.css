@@ -80,7 +80,8 @@ body {
 /* result */
 .result {
     margin: 0 60px;
-    transform: translateY(20%);
+    position: absolute;
+    top: 200px;
 }
 /* result */
 
