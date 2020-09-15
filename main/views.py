@@ -14,6 +14,10 @@ from django.core.mail import EmailMessage
 from django.utils.encoding import force_bytes, force_text
 from .tokens import account_activation_token
 
+# 썸네일 이미지 관련
+from bs4 import BeautifulSoup
+import requests
+
 # Create your views here.
 
 # 홈페이지 들어가서 첫 화면
@@ -78,7 +82,12 @@ def signup(request):
 
 # 메인페이지 (추천 사이트 출력)
 def main(request):
-    return render(request, 'main.html')
+    sites = Site.objects.all()
+    thumbnail_list = []
+    for site in sites:
+        thumbnail_list.append(site.thumbnail)
+
+    return render(request, 'main.html', {'thumbnail_list' : thumbnail_list})
 
 # 로그아웃 구현
 def logout(request):
@@ -110,6 +119,16 @@ def db(request):
             site.title = row['title']
             site.tag = row['tag']
             site.url = row['url']
+            url = site.url
+            req = requests.get(url, verify=False, allow_redirects=False)
+            soup = BeautifulSoup(req.text, 'html.parser')
+            try:
+                thumbnail = soup.find('meta', {'property':'og:image'})['content']
+                site.thumbnail = thumbnail
+            except TypeError:
+                # 기본 이미지 (임시로 넣음)
+                site.thumbnail = 'https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png'            
+            
             site.save()
 
-        return redirect('main')
+    return redirect('main')

@@ -18,7 +18,7 @@
             <div class="menu">
                 {% if user.is_authenticated %}
                 <ul>
-                    <li><a href="#">logout</a></li>
+                    <li><a href="{% url 'logout' %}">logout</a></li>
                     <li><img src=""><a href="#">mypage</a></li>
                 </ul>
                 {% endif %}
@@ -47,6 +47,7 @@
 
             </div>
             <form id="login" method='POST' action="{% url 'login' %}" class="input-group">
+                {% csrf_token %}
                 <input type="text" id="email-input" class="input-field" placeholder="이메일을 입력하세요" required>
                 <input type="password" id="password-input" class="input-field" placeholder="비밀번호를 입력하세요" required>
                 <label><input type="checkbox" id="savepass">비밀번호 저장하기</label>
@@ -71,6 +72,7 @@
             <div id="intro" class="input-group">
             </div>
             <form id="login" method='POST' action="{% url 'signup' %}" class="input-group">
+                {% csrf_token %}
                 <input type="text" id="signemail-input" class="input-field" placeholder="이메일을 입력하세요" required>
                 <input type="password" id="signpassword-input" class="input-field" placeholder="비밀번호를 입력하세요" required>
                 <input type="password" id="signpassword-reinput" class="input-field" placeholder="비밀번호를 다시 입력하세요" required>

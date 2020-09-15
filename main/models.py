@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from bs4 import BeautifulSoup
+import requests
 
 # Create your models here.
 #class ExtendedUserInfo(models.Model):
@@ -15,6 +17,7 @@ class Site(models.Model):
     description = models.CharField(max_length=300)
     tag = models.CharField(max_length=150)
     url = models.CharField(max_length=100)
-
+    thumbnail = models.CharField(max_length=150, default=None)
+    
     def __str__(self):
         return self.title
